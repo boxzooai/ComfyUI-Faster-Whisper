@@ -1,0 +1,6 @@
+faster-whisper
+ctranslate2
+pillow
+uuid
+torchaudio
+retry

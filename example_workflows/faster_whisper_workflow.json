@@ -1,0 +1,154 @@
+{
+  "last_node_id": 31,
+  "last_link_id": 28,
+  "nodes": [
+    {
+      "id": 29,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        1016.56103515625,
+        -20.173736572265625
+      ],
+      "size": [
+        210,
+        147.46128845214844
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "label": "输入",
+          "type": "*",
+          "dir": 3,
+          "link": 27
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 28,
+      "type": "LoadAudio",
+      "pos": [
+        284.95562744140625,
+        -29.87994384765625
+      ],
+      "size": [
+        315,
+        124
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "label": "音频",
+          "type": "AUDIO",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "vocals.wav",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 31,
+      "type": "Faster Whisper",
+      "pos": [
+        652.38232421875,
+        -13.407099723815918
+      ],
+      "size": [
+        315,
+        122
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "label": "audio",
+          "type": "AUDIO",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "STRING",
+          "links": [
+            27
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "segments_alignment",
+          "label": "segments_alignment",
+          "type": "whisper_alignment",
+          "links": null
+        },
+        {
+          "name": "words_alignment",
+          "label": "words_alignment",
+          "type": "whisper_alignment",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Faster Whisper"
+      },
+      "widgets_values": [
+        "base",
+        "zh"
+      ]
+    }
+  ],
+  "links": [
+    [
+      27,
+      31,
+      0,
+      29,
+      0,
+      "*"
+    ],
+    [
+      28,
+      28,
+      0,
+      31,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.4413396481345568,
+      "offset": [
+        -41.839164965080364,
+        183.38785353711495
+      ]
+    }
+  },
+  "version": 0.4
+}
