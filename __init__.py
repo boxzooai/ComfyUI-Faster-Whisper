@@ -1,17 +1,17 @@
-import os
-import subprocess
-import sys
-
-try:
-    from faster_whisper import WhisperModel
-except ImportError:
-    requirements_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
-    try:
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', requirements_path])
-        from faster_whisper import WhisperModel
-    except Exception as e:
-        print(f'自动安装依赖失败，请手动执行: pip install -r {requirements_path}')
-        raise
+# import os
+# import subprocess
+# import sys
+#
+# try:
+#     from faster_whisper import WhisperModel
+# except ImportError:
+#     requirements_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
+#     try:
+#         subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', requirements_path])
+#         from faster_whisper import WhisperModel
+#     except Exception as e:
+#         print(f'自动安装依赖失败，请手动执行: pip install -r {requirements_path}')
+#         raise
 
 from .apply_whisper import ApplyWhisperNode
 from .add_subtitles_to_frames import AddSubtitlesToFramesNode
